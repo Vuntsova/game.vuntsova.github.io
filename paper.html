@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+
+	<h1>Let's play!</h1>
+		<br>
+	<h1>Win: <span id="win">0</span></h1>
+		<br>
+	<h1>Lose:<span id="lose">0</span></h1>
+		<br>
+	<h1>Tie: <span id="tie">0</span></h1>
+
+<script type="text/javascript">
+//Score starts with 0
+var win = 0;
+var lose = 0;
+var tie = 0;
+
+document.onkeyup = function(){
+
+var userChoice = event.key;
+var rpsOpt = ["r", "p", "s"];
+var randomChoice = Math.floor(Math.random()*rpsOpt.length);
+var compChoice = rpsOpt[randomChoice];
+	
+	if(userChoice === "r" || userChoice === "p" || userChoice === "s")
+		{
+		if
+	      (
+	       userChoice === "r" && compChoice ==="r" ||
+		   userChoice === "p" && compChoice ==="p" ||
+		   userChoice === "s" && compChoice ==="s" 
+		  )
+		{	
+			tie++;
+			document.getElementById("tie").textContent = tie;}
+		else if
+		(
+	       userChoice === "r" && compChoice ==="p" ||
+		   userChoice === "p" && compChoice ==="s" ||
+		   userChoice === "s" && compChoice ==="r" 
+		  )
+		{	
+			lose++;
+			document.getElementById("lose").textContent = lose;
+		}
+
+		else if
+		  (
+		   userChoice === "r" && compChoice ==="s" ||
+		   userChoice === "p" && compChoice ==="r" ||
+		   userChoice === "s" && compChoice ==="p" 
+		  )
+		{
+		   	win++;
+			document.getElementById("win").textContent = win;
+			
+		}
+	}
+}//End onkeyup function
+
+</script>	
+</body>
+</html>
